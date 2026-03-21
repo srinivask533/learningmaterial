@@ -50,9 +50,29 @@ services:
       - "6379:6379"
     volumes:
       - redis-data:/data
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk
+
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
+      SPLUNK_PASSWORD: Admin@12345
+
+    ports:
+      - "8000:8000"
+      - "8088:8088"
+      - "8089:8089"
+      - "9997:9997"
+
+    volumes:
+      - splunk-data:/opt/splunk/var
+      - splunk-etc:/opt/splunk/etc
 
 volumes:
   kafka-data:
   postgres-data:
   mongo-data:
   redis-data:
+  splunk-data:
+  splunk-etc:
