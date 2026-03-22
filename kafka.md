@@ -19,5 +19,7 @@ To listout the topics: docker exec -it kafka kafka-topics --list --bootstrap-ser
 ![img_1.png](img_1.png)
 
 
+splunk configuraiton added in docker compose file to send the logs to splunk.
+![img_3.png](img_3.png)
 
-
+![img_4.png](img_4.png)
